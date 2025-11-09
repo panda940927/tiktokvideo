@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>葉花花請戒菸</title>
+    <title>彈出式影片視窗</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -107,7 +107,8 @@
     <div class="button-container">
         <button class="playBtn" data-src="video/TikSave.io_7570046847952178452.mp4">巴掌舞</button>
         <button class="playBtn" data-src="video/TikSave.io_7569868350143483157.mp4">丁丁丁</button>
-        <button class="playBtn" data-src="video/TikSave.io_7561327227984530744.mp4">播放影片 3</button>
+        <button class="playBtn" data-src="video/video3.mp4">播放影片 3</button>
+        <button onclick="location.href='lottery.html'">抽獎</button>
     </div>
 
     <!-- 模態視窗 -->
@@ -152,6 +153,99 @@
                 video.pause();
                 video.currentTime = 0;
             }
+        };
+    </script>
+</body>
+</html>
+
+---
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>抽獎頁面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            gap: 20px;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        button {
+            font-size: 24px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>抽獎活動</h1>
+    <button id="lotteryBtn">抽獎</button>
+    <div id="result"></div>
+
+    <script>
+        const links = [
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7570046847952178452?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7569868350143483157?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7569200935986007316?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568884624445738260?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568373554484366613?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568008159508352277?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7567630615978331413?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7567259959612673301?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7566613342677159188?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7566147120030371092?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565888108844059924?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565778028391861525?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565511060283755796?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565414219747691796?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565135871603674388?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565037342805871892?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7564784895604673812?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7564312699060931861?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            
+        ];
+
+        const lotteryBtn = document.getElementById('lotteryBtn');
+        const resultDiv = document.getElementById('result');
+
+        lotteryBtn.onclick = function() {
+            // 隨機選擇一個連結
+            const randomIndex = Math.floor(Math.random() * links.length);
+            const selectedLink = links[randomIndex];
+
+            // 顯示提示訊息
+            resultDiv.textContent = "恭喜！即將前往獎品頁面...";
+
+            // 延遲跳轉，讓使用者看到訊息
+            setTimeout(() => {
+                window.location.href = selectedLink;
+            }, 1500);
         };
     </script>
 </body>
