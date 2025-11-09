@@ -232,6 +232,7 @@
             "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7563285534546595092?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
             "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7562811208911293716?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
             "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7562176091184565525?is_from_webapp=1&sender_device=pc&web_id=7570407673708676615",
+            "下班",
             
             
             
@@ -241,17 +242,17 @@
         const resultDiv = document.getElementById('result');
 
         lotteryBtn.onclick = function() {
-            // 隨機選擇一個連結
-            const randomIndex = Math.floor(Math.random() * links.length);
-            const selectedLink = links[randomIndex];
+            const randomIndex = Math.floor(Math.random() * prizes.length);
+            const selectedPrize = prizes[randomIndex];
 
-            // 顯示提示訊息
-            resultDiv.textContent = "恭喜花花距離戒菸更進一步！";
-
-            // 延遲跳轉，讓使用者看到訊息
-            setTimeout(() => {
-                window.location.href = selectedLink;
-            }, 1500);
+            if (selectedPrize === "下班") {
+                resultDiv.textContent = "🎉花花卸妝下班";
+            } else {
+                resultDiv.textContent = "恭喜花花離戒菸更近一步！";
+                setTimeout(() => {
+                    window.location.href = selectedPrize;
+                }, 1500);
+            }
         };
     </script>
 </body>
