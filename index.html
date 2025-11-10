@@ -108,25 +108,27 @@
         const lotteryBtn = document.getElementById('lotteryBtn');
         const resultDiv = document.getElementById('result');
 
-       lotteryBtn.onclick = function() {
+        lotteryBtn.onclick = function() {
             // 計算總機率
-            const totalChance = prizes.reduce((sum, p) => sum + p.chance, 0);
-            let rand = Math.random() * totalChance;
+        const totalChance = prizes.reduce((sum, p) => sum + p.chance, 0);
+        let rand = Math.random() * totalChance;
 
-            let selectedPrize = null;
-            for (const prize of prizes) {
-                rand -= prize.chance;
-                if (rand <= 0) {
-                    selectedPrize = prize;
-                    break;
-                }
+        let selectedPrize = null;
+        for (const prize of prizes) {
+            rand -= prize.chance;
+            if (rand <= 0) {
+            selectedPrize = prize;
+            break;
             }
+        }
 
-            if (selectedPrize === "下班") {
-                resultDiv.textContent = "花花休息卸妝戒菸下班";
-            } else {
-                resultDiv.textContent = `花花減肥日記`;
-                window.open(selectedPrize, '_blank');
+        if (!selectedPrize) return;
+
+        if (selectedPrize.url === "下班") {
+            resultDiv.textContent = "花花休息卸妝戒菸下班";
+        } else {
+            resultDiv.textContent = "花花減肥日記";
+            window.open(selectedPrize.url, '_blank'); // ✅ 取 url 屬性
             }
         };
     </script>
