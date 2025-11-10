@@ -54,16 +54,17 @@
     <script>
         // 獎品清單，僅包含名稱或URL
         const prizes = [
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7570046847952178452", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7569868350143483157", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7569200935986007316", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568884624445738260", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568373554484366613", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568008159508352277", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7567630615978331413", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7567259959612673301", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7566613342677159188", chance: 1 },
-            { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7566147120030371092", chance: 1 },
+    // 前40部影片 chance = 1
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7570046847952178452", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7569868350143483157", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7569200935986007316", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568884624445738260", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568373554484366613", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7568008159508352277", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7567630615978331413", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7567259959612673301", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7566613342677159188", chance: 1 },
+    { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7566147120030371092", chance: 1 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565888108844059924", chance: 1 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565778028391861525", chance: 1 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7565511060283755796", chance: 1 },
@@ -96,6 +97,8 @@
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7554277196135779595", chance: 1 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7554054574135430411", chance: 1 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7554014568201162040", chance: 1 },
+
+    // 後10部影片 chance = 2
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7553905459317591352", chance: 2 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7519117436612906245", chance: 2 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7478881262770408710", chance: 2 },
@@ -106,9 +109,10 @@
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7220246491057769733", chance: 2 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7209817039634992410", chance: 2 },
     { url: "https://www.tiktok.com/@yaaaaaaaaeeee827/video/7202594315372121371", chance: 2 },
+
+    // 下班 chance = 1
     { url: "下班", chance: 1 }
-            
-        ];
+];
 
         const lotteryBtn = document.getElementById('lotteryBtn');
         const resultDiv = document.getElementById('result');
